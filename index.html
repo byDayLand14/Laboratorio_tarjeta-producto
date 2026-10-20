@@ -3,38 +3,85 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Práctica de laboratorio · tarjeta-producto</title>
+  <title>AvalibleStore · Lo que te hace sentir bien</title>
   <link rel="stylesheet" href="./estilos.css">
-
-  <!-- PASO 1 · La página solo importa el módulo del componente.
-       Ábrela con Live Server: los módulos no cargan con file:// -->
   <script type="module" src="./componentes/tarjeta-producto.js"></script>
+  <script type="module" src="./componentes/tarjeta-servicio.js"></script>
+  <script type="module" src="./componentes/tarjeta-venta.js"></script>
 </head>
 <body>
-  <!-- Cambia el título por el nombre de tu emprendimiento -->
-  <h1>Nombre de tu emprendimiento</h1>
+  <h1>AvalibleStore</h1>
 
-  <!-- PASO 4 · Usa la tarjeta tres veces con productos REALES de tu emprendimiento:
-       cambia la foto, el nombre, la descripción y el precio de cada una. -->
-  <main class="catalogo">
+  <main>
 
-    <tarjeta-producto precio="0">
-      <img slot="foto" src="./img/producto-1.svg" alt="Describe la foto del producto 1">
-      <h3 slot="nombre">Producto 1</h3>
-      <p>Descripción corta del producto 1</p>
-    </tarjeta-producto>
+    <h2>Productos destacados</h2>
+    <section class="catalogo">
 
-    <tarjeta-producto precio="0">
-      <img slot="foto" src="./img/producto-2.svg" alt="Describe la foto del producto 2">
-      <h3 slot="nombre">Producto 2</h3>
-      <p>Descripción corta del producto 2</p>
-    </tarjeta-producto>
+      <tarjeta-producto precio="30" destacado>
+        <img slot="foto" src="./img/kit-rizador-plancha-cepillo.webp"
+             alt="Combo de churera, plancha alisadora y cepillo secador para el cabello">
+        <h3 slot="nombre">Combo: churera, plancha y cepillo secador</h3>
+        <p>Tres herramientas para rizar, alisar y secar tu cabello en casa.</p>
+      </tarjeta-producto>
 
-    <tarjeta-producto precio="0">
-      <img slot="foto" src="./img/producto-3.svg" alt="Describe la foto del producto 3">
-      <h3 slot="nombre">Producto 3</h3>
-      <p>Descripción corta del producto 3</p>
-    </tarjeta-producto>
+      <tarjeta-producto precio="22">
+        <img slot="foto" src="./img/airpods-pro-2-blanco.webp"
+             alt="Audífonos inalámbricos blancos junto a su estuche de carga">
+        <h3 slot="nombre">Audífonos Premium Pro 2</h3>
+        <p>Audífonos inalámbricos con estuche de carga para tu día a día.</p>
+      </tarjeta-producto>
+
+      <tarjeta-producto precio="10">
+        <img slot="foto" src="./img/alcancia-reto-ahorro-10000.webp"
+             alt="Alcancía de madera con forma de gatito">
+        <h3 slot="nombre">Alcancía de madera Gatito</h3>
+        <p>Alcancía de madera para empezar tu hábito de ahorro.</p>
+      </tarjeta-producto>
+
+    </section>
+
+    <h2>Servicios</h2>
+    <section class="catalogo">
+
+      <tarjeta-servicio costo="0">
+        <span slot="icono">🚇</span>
+        <h3 slot="nombre">Retiro en el Metro de Quito</h3>
+        <p>Retira tu pedido en las paradas del Metro, de Quitumbe a El Labrador.</p>
+      </tarjeta-servicio>
+
+      <tarjeta-servicio costo="4.5">
+        <span slot="icono">📦</span>
+        <h3 slot="nombre">Envío a todo el Ecuador</h3>
+        <p>Enviamos tu pedido por courier a cualquier ciudad del país.</p>
+      </tarjeta-servicio>
+
+      <tarjeta-servicio costo="0">
+        <span slot="icono">🔄</span>
+        <h3 slot="nombre">Cambio por defecto</h3>
+        <p>Si tu producto llega con un defecto, lo cambiamos dentro de 7 días.</p>
+      </tarjeta-servicio>
+
+    </section>
+
+    <h2>Registro de ventas (ejemplo)</h2>
+    <section class="catalogo">
+
+      <tarjeta-venta cantidad="2" precio="22">
+        <h3 slot="nombre">Audífonos Premium Pro 2</h3>
+        <p>Retiro en la parada El Labrador · pago por transferencia.</p>
+      </tarjeta-venta>
+
+      <tarjeta-venta cantidad="1" precio="30">
+        <h3 slot="nombre">Combo: churera, plancha y cepillo secador</h3>
+        <p>Envío por courier · pago con DeUna.</p>
+      </tarjeta-venta>
+
+      <tarjeta-venta cantidad="3" precio="10">
+        <h3 slot="nombre">Alcancía de madera Gatito</h3>
+        <p>Retiro en la parada Quitumbe · pago contra entrega.</p>
+      </tarjeta-venta>
+
+    </section>
 
   </main>
 </body>
