@@ -1,7 +1,3 @@
-// componentes/tarjeta-venta.js
-// Componente <tarjeta-venta> de AvalibleStore: registro de una venta.
-
-// Una sola plantilla, declarada fuera de la clase.
 const plantilla = document.createElement("template");
 plantilla.innerHTML = `
   <style>
@@ -41,7 +37,6 @@ plantilla.innerHTML = `
 
 export class TarjetaVenta extends HTMLElement {
 
-  // Atributos que observa el componente.
   static get observedAttributes() {
     return ["cantidad", "precio"];
   }
@@ -64,7 +59,6 @@ export class TarjetaVenta extends HTMLElement {
     }
   }
 
-  // Propiedades sincronizadas con sus atributos.
   get cantidad() {
     return Number(this.getAttribute("cantidad"));
   }
@@ -81,7 +75,6 @@ export class TarjetaVenta extends HTMLElement {
     this.setAttribute("precio", valor);
   }
 
-  // Propiedad calculada (solo lectura).
   get total() {
     return this.cantidad * this.precio;
   }
